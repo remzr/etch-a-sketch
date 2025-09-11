@@ -4,7 +4,8 @@ body, html {
 }
 
 #canvasSection {
-    width: 100vw;
+    /* width: 100vw; */
+    aspect-ratio: 1 / 1;
     margin: 0;
     padding: 0;
     

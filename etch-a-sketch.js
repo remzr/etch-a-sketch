@@ -1,8 +1,4 @@
 function resizeCanvas(canvasSize) {
-  //Rounding input to 4
-  while (canvasSize % 4 != 0) {
-    canvasSize++
-  }
   fillCanvas(canvasSize);
   //const button = document.getElementById(resizeButton)
 };
@@ -10,15 +6,19 @@ function resizeCanvas(canvasSize) {
 let canvasSize = 100;
 
 function fillCanvas (canvasSize) {
+
   //Empty canvas
   const element = document.getElementById("canvasSection");
   while (element.firstChild) {
     element.removeChild(element.firstChild);
   }
   //Fill canvas
-  for (let i = 0; i < canvasSize; i++) {    
+  for (let i = 0; i < (canvasSize * canvasSize); i++) {    
+      let squareWidth = `${100 / canvasSize}%`
+    
       const canvasSquare = document.createElement("div");
       canvasSquare.classList.add("canvasSquare");
+      canvasSquare.style.width = `${squareWidth}`;
       canvasSection.appendChild(canvasSquare);
   }    
 };
